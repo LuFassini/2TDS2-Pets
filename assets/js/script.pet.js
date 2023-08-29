@@ -44,7 +44,21 @@ function cadastrarPet() {
     }
 }
 
-function envieMsg(msg, tipo) {
+calculateAge() {
+    let today = new Date();
+    let data = new Date(this.data);
+    let age = today.getFullYear() - data.getFullYear();
+    let month = today.getMonth() - data.getMonth();
+
+    if (month < 0 || (month === 0 && today.getDate() < data.getDate())) {
+        age--;
+    }
+    console.log("Passou pelo calculateAge() da class User");
+    return age;
+    
+}
+
+function envieMsg(msg,tipo) {
     //Essa funcao vai colocar uma msg que vem parametro na tela 
     // do usuario. Logo a primeira coisa que eu tenho que fazer
     // é usar as tecnicas de HMTL com JS.
@@ -53,9 +67,10 @@ function envieMsg(msg, tipo) {
     msgDiv.innerHTML = "";
 
     let msgParaTela = `
-        <p class='>${msg}'</p>
-    `
+    <p class='${tipo}'>${msg}</p>
+`
     msgDiv.innerHTML += msgParaTela;
+
 
     // O timeout ocorre depois que o tempo passado para ele
     // E executa o que esta dentro da function, no nosso caso
