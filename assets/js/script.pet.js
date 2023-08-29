@@ -43,6 +43,7 @@ class Pet {
     calculateAge(birthdate) {
         let today = new Date();
         let birthdate_ = new Date(birthdate);
+        console.log("Pedro", birthdate);
         let age = today.getFullYear() - birthdate_.getFullYear();
         let month = today.getMonth() - birthdate_.getMonth();
 
@@ -66,23 +67,25 @@ function cadastrarPet() {
     console.log(foto);
     console.log(data);
 
-    petsList.adicionarPet(tutor, nomePet, especie, foto, data);
+    petsList.adicionarPet(tutor, nomePet, especie, data, foto);
 
     exibirPets();
 }
+
+
 class PetsList {
     constructor() {
         this.pets = [];
     }
 
-    adicionarPet(tutor, nomePet, especie, foto, data) {
+    adicionarPet(tutor, nomePet, especie, data, foto) {
         if (isAnyInputEmpty()) {
             sendMSG("Preencha todos os campos!", "error");
         } else if (!isURLValida(foto)) {
             sendMSG("URL da imagem inválida!", "error");
         }
         else {
-            const pet = new Pet(tutor, nomePet, especie, foto, data);
+            const pet = new Pet(tutor, nomePet, especie, data, foto);
             this.pets.push(pet);
             sendMSG("Pet adicionado ao sistema!", "success");
             clearInputs();
@@ -158,4 +161,20 @@ function isAnyInputEmpty() {
     } else {
         return false;
     }
+}
+
+function showRegister() {
+    document.getElementById("div-main").classList.add("hidden");
+    document.getElementById("titulo-principal").classList.remove("hidden");
+    document.getElementById("sub-div").classList.remove("hidden");
+    
+
+}
+
+function showCadastro() {
+    document.getElementById("div-main").classList.remove("hidden");
+    document.getElementById("titulo-principal").classList.add("hidden");
+    document.getElementById("sub-div").classList.add("hidden");
+    
+
 }
