@@ -3,11 +3,30 @@
     padding: 0;
     box-sizing: border-box;
 }
-.div-header {
+h1 {
     color: #ffffff;
+    width: 100%;
+}
+header {
     text-align: center;
     display: flex;
     background-color: #1d7044;
+    width: 100%;
+    padding: 3.5rem;
+}
+
+#but-cad{
+    color:#ffffff;
+    background-color: #1d7044;
+    border:none;
+    text-align: center;
+}
+
+#but-reg{
+    color:#ffffff;
+    background-color: #1d7044;
+    border:none;
+    text-align: center;
 }
 
 h2 {
@@ -37,14 +56,18 @@ body {
 }
 
 #container {
-    width: 60%;
+    width: 50%;
     margin: 0 auto;
     background-color: #ffffff;
     padding: 50px;
     border-radius: 5px;
     justify-content: left;
-    margin-top: 5rem;
+    margin-top: 2rem;
     margin-right: 10rem;
+}
+#but-criarPet{
+    text-align: center;
+    justify-content: center;
 }
 
 #container-petList{
