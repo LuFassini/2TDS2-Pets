@@ -31,7 +31,7 @@ function cadastrarPet() {
     // Pois se estao vazio eu preciso de um alerta para o usuario.
     // ou uma mensagem de erro.
     // Para isso, vamos criar uma condicional if.
-    if (tutor == "" || nomedoPet == "" || especie == "" || foto == "") {
+    if (tutor == "" || nomePet == "" || especie == "" || foto == "" || data == "") {
         // Verificar se o if esta funcionando
         console.log("Os dados estao vazios");
         // Como esse é o primeiro if de verificacao, vamos criar 
@@ -76,12 +76,12 @@ class Pet {
     // E nele, eu irei passar todas as propriedados, exceto: array e 
     // propriedades que serao calculadas por alguma funcao/metodo que eu 
     // desenvolva.
-    constructor(tutor, nomedoPet, especie, foto,data) {
+    constructor(tutor, nomePet, especie, foto,data) {
         // fazer as referencias das variaveis, utilizando o this.
         // e aqui que irá aparecer tbm os: arrays(se precisar)
         // e as propriedades que serao calculadas com alguma funcao/metodo.
         this.tutor = tutor;
-        this.nomedoPet = nomedoPet;
+        this.nomePet = nomePet;
         this.especie = especie;
         this.foto = foto;
         this.data = data;
@@ -181,9 +181,9 @@ class ListaPets {
     }
 }
 // Criar/Instanciar minha lista de jogos.
-const bibliotecaPetss = new ListaPets();
+const bibliotecaPets = new ListaPets();
 // Console que verifica se minha lista esta sendo criada.
-console.log(bibliotecaPetss);
+console.log(bibliotecaPets);
 // Após cadastrar um jogo, eu posso direto no console, digitar o nome da lista
 // para verificar se esta cadastrando.
 
@@ -208,3 +208,78 @@ function limparInputs() {
 // os itens de dentro do meu objeto na tela.
 
 
+function renderizarConteudo() {
+    // Variavel para armazenar o innerHMTL, que é
+    // responsavel por renderizar na tela
+
+    const listaHTML = document.getElementById('containerLista');
+    listaHTML.innerHTML = '';
+
+    // Faça meu laço de repeticao, que cria um elemento HTML para
+    // cada elemento do meu objeto. Usando de preferencia o forEach.
+
+    //Preciso pegar minha lista/array de objetos, no nosso caso: Jogos.
+    let array = bibliotecaPets.listaPetsArray;
+
+    //Verificar se meu array esta vindo certo.
+    console.log(array);
+
+    //Aqui no for each, o meu elemento é jogo, ou seja o singular 
+    // dos itens que eu tenho dentro do array. No nosso caso, array tem 
+    // jogos, entao usamos jogo.
+    array.forEach(pet => {
+        //crio uma div em html, dentro do JS mesmo.
+        // Que vai ser colocada dentro da div, que esta esperando
+        // no html.
+        const PetDiv = `
+            <!--
+                Comentario:
+                Crio a div, com class para usar depois no CSS
+                E passo os valores que estao no meu objeto 
+                para cada propriedade/elemento do HTML
+            -->
+            <div class='jogoDetalhe'>
+                <h2>Tutor: ${pet.tutor}</h2>
+                <p>Nome do Pet: R$${pet.nomePet}</p>
+                <p>Espécie: ${pet.especie}</p>
+                <p>Data: ${pet.data}</p>
+                <img src="${pet.foto}" alt="${pet.nomePet}">
+            </div>
+       `;
+
+        listaHTML.innerHTML += petDiv;
+    });
+}
+
+function showPets() {
+    console.log("Passou pela funcao showPets()");
+
+    if (pet.addAll().length == 0) {
+        sendErrorMsg("Não há pets cadastrados");
+        return;
+    } else {
+        document.getElementById("container").petList.remove("hidden");
+        document.getElementById("input-continer").petList.add("hidden");
+        document.getElementById("titulo-principal").petList.add("hidden");
+
+        console.log(pet.getAll());
+
+        const users = allUsers.getAll();
+
+        let html = "";
+        users.forEach((pet) => {
+            html += `
+            <div class="list-eachPet">
+                <p><strong>Tutor:</strong> ${pet.tutor}</p>
+                <p><strong>Nome do Pet:</strong> ${pet.nomePet}</p>
+                <p><strong>Espécie:</strong> ${pet.especie}</p>
+                <p><strong>Foto:</strong> ${pet.foto}</p>
+                <p><strong>Data de nascimento:</strong> ${dateinPTBR(pet.data)}</p>
+            </div>
+           `;
+        });
+        document.getElementById("pet-list").innerHTML = html;
+    }
+    const contador = allUsers.countNumber()
+    document.getElementById("contador").innerHTML = `Total: ${contador}`;
+}
