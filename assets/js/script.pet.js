@@ -107,6 +107,8 @@ function exibirPets() {
                     <p>Espécie: ${pet.especie}</p>
                     <p>Data de Nascimento: ${pet.data}</p>
                     <p>Idade: ${pet.age}</p>
+                    <button id="but-editPet" type="submit" class="button" onclick="editarPet()"> Editar </button>
+                    <button id="but-removePet" type="submit" class="button" onclick="removePet()"> Remover </button>
                 </div>
             `;
 
