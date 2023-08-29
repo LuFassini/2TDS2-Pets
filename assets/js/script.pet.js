@@ -1,18 +1,23 @@
-// Primeira coisa que eu vou verificar é se meu JS está devidamente linkado no meu HTML.
+
 console.log("O JS está linkado!");
 
-// Entao para fazer acontecer algo eu preciso de uma funcao
-// Vamos criar uma funcao para vericar se os inputs estao funcionando.
-// Para isso, vamos criar uma funcao chamada verificarInputs.
-// Tudo que esta dentro de uma funcao só executa quando a funcao/acao é chamada.
+function Pet (){
+    constructor(tutor, nomePet,especie, data, foto) {
+        this.tutor = tutor;
+        this.nomePet = nomePet;
+        this.especie = this.especie;
+        this.data = this.data;
+        this.foto = this.foto;
+        this.age = this.calculateAge();
+        console.log("Passou pelo constructor da class Pet");
+    }
+ {
 
-// Entao para fazer acontecer algo eu preciso de uma funcao
-// Vamos criar uma funcao para vericar se os inputs estao funcionando.
-// Para isso, vamos criar uma funcao chamada verificarInputs.
-// Tudo que esta dentro de uma funcao só executa quando a funcao/acao é chamada.
+    }
+}
+
 function cadastrarPet() {
-    // Vamos verificar se os inputs estao colecionando os dados corretamente.
-    // Para isso, vamos criar uma variável para cada input.
+
     let tutor = document.getElementById("input-tutor").value;
     let nomePet = document.getElementById("input-nomePet").value;
     let especie = document.getElementById("input-especie").value;
@@ -26,11 +31,6 @@ function cadastrarPet() {
     console.log("Foto:" +  foto);
     console.log("Data de Nascimento:" + data);
     
-
-    // Vamos entao criar uma verificacao se os inputs estao vazios.
-    // Pois se estao vazio eu preciso de um alerta para o usuario.
-    // ou uma mensagem de erro.
-    // Para isso, vamos criar uma condicional if.
     if (tutor == "" || nomePet == "" || especie == "" || foto == "" || data == "") {
         // Verificar se o if esta funcionando
         console.log("Os dados estao vazios");
@@ -46,11 +46,11 @@ function cadastrarPet() {
 
 calculateAge() {
     let today = new Date();
-    let data = new Date(this.data);
-    let age = today.getFullYear() - data.getFullYear();
-    let month = today.getMonth() - data.getMonth();
+    let birthdate = new Date(this.birthdate);
+    let age = today.getFullYear() - birthdate.getFullYear();
+    let month = today.getMonth() - birthdate.getMonth();
 
-    if (month < 0 || (month === 0 && today.getDate() < data.getDate())) {
+    if (month < 0 || (month === 0 && today.getDate() < birthdate.getDate())) {
         age--;
     }
     console.log("Passou pelo calculateAge() da class User");
@@ -160,6 +160,8 @@ function isURLValida(url) {
     }
 }
 
+
+
 //Criar lista de pets
 class ListaPets {
     // Apos criar a class, eu preciso criar o meu construtor.
@@ -205,6 +207,8 @@ class ListaPets {
         }
     }
 }
+
+
 // Criar/Instanciar minha lista de jogos.
 const bibliotecaPets = new ListaPets();
 // Console que verifica se minha lista esta sendo criada.
