@@ -42,3 +42,24 @@ function verificarInputs() {
         return false;
     }
 }
+
+function envieMsg(msg, tipo) {
+    //Essa funcao vai colocar uma msg que vem parametro na tela 
+    // do usuario. Logo a primeira coisa que eu tenho que fazer
+    // é usar as tecnicas de HMTL com JS.
+
+    let msgDiv = document.getElementById("msg");
+    msgDiv.innerHTML = "";
+
+    let msgParaTela = `
+        <p class='>${msg}'</p>
+    `
+    msgDiv.innerHTML += msgParaTela;
+
+    // O timeout ocorre depois que o tempo passado para ele
+    // E executa o que esta dentro da function, no nosso caso
+    // ele limpa a msgDiv para tirar da tela depois de 3000ms ou 3s.
+    setTimeout(function () {
+        msgDiv.innerHTML = "";
+    }, 3000);
+}
