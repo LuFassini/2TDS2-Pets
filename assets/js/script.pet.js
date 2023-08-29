@@ -136,3 +136,75 @@ function comporPet() {
     renderizarConteudo();
 }
 
+class ListaPets {
+    // Apos criar a class, eu preciso criar o meu construtor.
+    // E nele, eu irei passar todas as propriedados, exceto: array e 
+    // propriedades que serao calculadas por alguma funcao/metodo que eu 
+    // desenvolva.
+    constructor() {
+        // Como será uma lista, eu preciso criar um this.listaQualquer
+        // Com um array vazio.
+        this.listaPetsArray = [];
+    }
+
+    // A lista sempre será uma class de acao, logo vou precisar
+    // de metodos, qual seria o primeiro metodo de acao?
+    // O primeiro e mais importante metodo é conseguir adicionar
+    // algo nessa lista, no nosso caso add Jogo em Lista de Jogos.
+
+    //Sintaxe dessa classe, o nome(){}
+
+    // Quando eu vou adicionar algo, eu preciso saber o que, logo
+    // eu uso parametro.
+    add(parametro) {
+        // Entao precisamos pegar o jogo que foi composto lá na linha 117.
+        // E dar um push no array que foi criado na linha 136.
+        // this.listaJogos.push(parametro);
+        // parametro é quem?
+        // o jogo, que foi instanciado na linha 117.
+
+        // E apos criar esse metodo, agora eu volto para a funcao
+        // comporJogo e uso após a instancia a acao/metodo add.
+        // Mas antes eu preciso ter uma listaJogos instanciada de forma
+        // global., criei ela na linha seguinte da class.
+
+        //Aqui faremos as verificacoes, antes de adicionar jogo, dentro
+        // do array, usando as funcoes que temos de acoes.
+        if (cadastrarPet()) {
+            envieMsg("Preencha todos os campos", "erro");
+        } else {
+            this.listaPetsArray.push(parametro);
+            limparInputs();
+            envieMsg("Cadastrado com sucesso", "sucesso")
+            console.log(this.listaPetsArray);
+        }
+    }
+}
+// Criar/Instanciar minha lista de jogos.
+const bibliotecaPetss = new ListaPets();
+// Console que verifica se minha lista esta sendo criada.
+console.log(bibliotecaPetss);
+// Após cadastrar um jogo, eu posso direto no console, digitar o nome da lista
+// para verificar se esta cadastrando.
+
+// Criar uma funcao que nos auxilia, e limpa todos os campos para mim
+// Uso ela sempre que precisar.
+
+function limparInputs() {
+    console.log("Usei a funcao de limparInputs");
+
+    //Pego o valor dela, e defino como vazio.
+    document.getElementById("input-tutor").value = '';
+    document.getElementById("input-nomePet").value = '';
+    document.getElementById("input-especie").value = '';
+    document.getElementById("input-foto").value = '';
+    document.getElementById("input-data").value = '';
+}
+
+
+// Tendo certeza que o meu array/lista de algo, esta sendo construida
+// e armazenando todos os itens.
+// Entao, eu crio uma funcao que fica responsavel por colocar/renderizar
+// os itens de dentro do meu objeto na tela.
+
+
