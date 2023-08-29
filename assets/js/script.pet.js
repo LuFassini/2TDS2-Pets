@@ -167,7 +167,7 @@ function showRegister() {
     document.getElementById("container").classList.add("hidden");
     document.getElementById("containerLista").classList.remove("hidden");
     document.getElementById("containerLista").classList.remove("hidden");
-    document.getElementById("butts").classList.add("hidden");
+    
 
     exibirPets();
 }
