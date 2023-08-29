@@ -69,7 +69,6 @@ function cadastrarPet() {
 
     petsList.adicionarPet(tutor, nomePet, especie, data, foto);
 
-    exibirPets();
 }
 
 
@@ -96,7 +95,7 @@ class PetsList {
     
 }
 function exibirPets() {
-    const petList = document.getElementById("petList");
+    const petList = document.getElementById("containerLista");
     petList.innerHTML = "";
 
     petsList.pets.forEach(pet => {
@@ -164,17 +163,16 @@ function isAnyInputEmpty() {
 }
 
 function showRegister() {
-    document.getElementById("div-main").classList.add("hidden");
-    document.getElementById("titulo-principal").classList.remove("hidden");
-    document.getElementById("sub-div").classList.remove("hidden");
-    
-
+    document.getElementById("subtitle").classList.add("hidden");
+    document.getElementById("container").classList.add("hidden");
+    document.getElementById("containerLista").classList.remove("hidden");
+    exibirPets();
 }
 
 function showCadastro() {
-    document.getElementById("div-main").classList.remove("hidden");
-    document.getElementById("titulo-principal").classList.add("hidden");
-    document.getElementById("sub-div").classList.add("hidden");
+    document.getElementById("subtitle").classList.remove("hidden");
+    document.getElementById("container").classList.remove("hidden");
+    document.getElementById("containerLista").classList.add("hidden");
     
 
 }

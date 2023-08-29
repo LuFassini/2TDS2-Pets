@@ -20,13 +20,26 @@ header {
     background-color: #1d7044;
     border:none;
     text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    
+    
 }
+#msg{
+    margin-top: 3rem;
+}
+    
+
 
 #but-reg{
     color:#ffffff;
     background-color: #1d7044;
     border:none;
     text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
 }
 
 h2 {
@@ -34,12 +47,15 @@ h2 {
     text-align: center;
 }
 
-.subtitle {
+#subtitle {
     text-align: center;
     display: flex;
     color: #1d7044;
-    margin-top: 5rem;
-    margin-left: 5rem;
+    margin-top: 1rem;
+    margin-left: -2rem;
+    justify-content: center;
+    
+
 }
 body {
     font-family: 'Poppins', sans-serif;
@@ -56,20 +72,23 @@ body {
 }
 
 #container {
-    width: 50%;
+    width: 35%;
     margin: 0 auto;
     background-color: #ffffff;
     padding: 50px;
     border-radius: 5px;
     justify-content: left;
-    margin-top: 2rem;
-    margin-right: 10rem;
+    margin-right: 5rem;
+    margin-top: -3rem;
 }
 #but-criarPet{
     text-align: center;
     justify-content: center;
+    position: absolute;
+     top: 35rem; 
+     left: 57rem;
+     margin-top: 0rem;
 }
-
 #container-petList{
     background-color: white;
     padding: 20px;
@@ -150,4 +169,12 @@ body {
     color: green;
     font-weight: bold;
     text-align: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.div-title{
+    
 }

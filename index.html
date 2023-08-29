@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,64 +11,56 @@
 
 <header>
     <div class="div-title"></div>
-        <h1 id="titulo-principal"> Clínica Veterinária </h1>
-    <div class="" id="butons"> 
-<div id="but-cad">
-    <button type="button" id="but-cad" onclick="showCadastro()"> Cadastro </button>
-</div>
-<div id="but-reg">
-    <button type="button" id="but-reg" onclick="showRegister()"> Exibição </button>
-</div>
+    <h1 id="titulo-principal"> Clínica Veterinária </h1>
+    <div class="" id="butons">
+        <div id="but-cad">
+            <button type="button" id="but-cad" onclick="showCadastro()"> Cadastro </button>
+        </div>
+        <div id="but-reg">
+            <button type="button" id="but-reg" onclick="showRegister()"> Exibição </button>
+        </div>
     </div>
+</div>
 
 </header>
+
 <body>
-    
-     <div id="container">
-    
-    <h2 id="subtitle">Cadastro de Pets</h2>
-    
-    <div class="" id="div-main">
-    <div id="input-continer">
-        
-        <label for="input-tutor">Tutor:</label>
-        <input type="text" id="input-tutor" name="input-tutor" class="input"/>
-
-        <label for="input-nomePet">Nome do Pet:</label>
-        <input type="text" id="input-nomePet" name="input-nomePet" class="input"/>
-
-        <label for="input-especie">Espécie:</label>
-        <input type="text" id="input-especie" name="input-especie" class="input" />
-
-        <label for="input-foto">Fotinha:</label>
-        <input type="text" id="input-foto" name="input-foto" class="input" />
-
-        <label for="input-data">Data de Nascimento</label>
-        <input type="date" id="input-data" name="input-data" class="input" />
-
-        
-
-        <div id="msg"></div>
-        <div id="petList"></div>
-
-        
-        <button id="but-criarPet" class="button" onclick="cadastrarPet()"> Cadastrar </button>
+    <div id="subtitle">
+        <h2 id="subtitle">Cadastro de Pets</h2>
     </div>
+
+<div id="container">
+        <div class="" id="div-main">
+            <div id="input-continer">
+
+                <label for="input-tutor">Tutor:</label>
+                <input type="text" id="input-tutor" name="input-tutor" class="input" />
+
+                <label for="input-nomePet">Nome do Pet:</label>
+                <input type="text" id="input-nomePet" name="input-nomePet" class="input" />
+
+                <label for="input-especie">Espécie:</label>
+                <input type="text" id="input-especie" name="input-especie" class="input" />
+
+                <label for="input-foto">Fotinha:</label>
+                <input type="text" id="input-foto" name="input-foto" class="input" />
+
+                <label for="input-data">Data de Nascimento</label>
+                <input type="date" id="input-data" name="input-data" class="input" />
+
+
+
+                <div id="msg"></div>
+                <div id="petList"></div>
+
+
+                <button id="but-criarPet" type="submit" class="button" onclick="cadastrarPet()"> Cadastrar </button>
+            </div>
         </div>
-   </div>
-  
-<div id="containerLista"></div>
-</div>
+    </div>
 
-
-   
-<div id="sub-div" class="hidden"></div>
-    
-    <div id="main-sub-div"></div>
-        <div id="user-list"></div>
-        
-
-
-
+    <div id="containerLista"></div>
+    </div>
 </body>
+
 </html>
