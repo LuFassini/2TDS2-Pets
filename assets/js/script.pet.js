@@ -136,6 +136,16 @@ function comporPet() {
     renderizarConteudo();
 }
 
+//Verificar imagem 
+function isURLValida(url) {
+    if(url.match(/\.(jpeg|jpg|gif|png)$/) != null){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+//Criar lista de pets
 class ListaPets {
     // Apos criar a class, eu preciso criar o meu construtor.
     // E nele, eu irei passar todas as propriedados, exceto: array e 
@@ -250,6 +260,8 @@ function renderizarConteudo() {
         listaHTML.innerHTML += petDiv;
     });
 }
+
+//Mostrar pets em outra pag
 
 function showPets() {
     console.log("Passou pela funcao showPets()");
