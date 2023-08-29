@@ -167,6 +167,7 @@ function showRegister() {
     document.getElementById("container").classList.add("hidden");
     document.getElementById("containerLista").classList.remove("hidden");
     document.getElementById("containerLista").classList.remove("hidden");
+    document.getElementById("butts").classList.add("hidden");
 
     exibirPets();
 }
@@ -175,22 +176,7 @@ function showCadastro() {
     document.getElementById("subtitle").classList.remove("hidden");
     document.getElementById("container").classList.remove("hidden");
     document.getElementById("containerLista").classList.add("hidden");
+    document.getElementById("butts").classList.remove("hidden");
     
-
 }
 
-function editarPet(index) {
-    const pet = pets[index];
-    const nomePet = document.getElementById("input-nomePet");
-    const especie = document.getElementById("input-especie");
-    const foto = document.getElementById("input-foto");
-    const data = document.getElementById("input-data");
-  
-    nomePet.value = item.nomePet;
-    especie.value = item.especie;
-    foto.value = item.foto;
-    data.value = item.data;
-  
-    editarPet = index; 
-  }
-  
