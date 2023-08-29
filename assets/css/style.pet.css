@@ -10,6 +10,7 @@ h1 {
 header {
     text-align: center;
     display: flex;
+    flex-direction: column;
     background-color: #1d7044;
     width: 100%;
     padding: 3.5rem;
@@ -24,13 +25,19 @@ header {
     align-items: center;
     margin-top: 5px;
     
-    
 }
 #msg{
     margin-top: 3rem;
 }
     
-
+.butons{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+   
+    
+}
 
 #but-reg{
     color:#ffffff;
@@ -40,6 +47,7 @@ header {
     justify-content: center;
     align-items: center;
     margin-top: 5px;
+    
 }
 
 h2 {
@@ -173,8 +181,4 @@ body {
 
 .hidden {
     display: none !important;
-}
-
-.div-title{
-    
 }
